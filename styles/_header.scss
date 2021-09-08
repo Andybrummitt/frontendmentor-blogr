@@ -1,0 +1,56 @@
+.navbar-main {
+    background: black;
+    padding: 1.5rem 1.25rem;
+}
+
+.title {
+    font-size: 1.25rem;
+    color: white;
+    font-family: 'Overpass';
+    font-weight: 600;
+}
+
+.hb-menu-btn  {
+    width: 2rem;
+    height: 1.25rem;
+    cursor: pointer;
+    position: relative;
+    transition: 0.3s ease-in-out;
+}
+
+#mid-bar {
+    transition: 0.3s ease-in-out;
+    display: inline-block;
+    height: 10%;
+    width: 100%;
+    background-color: white;
+}
+
+#mid-bar::before, #mid-bar::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 10%;
+    background: white;
+    transition: 0.3s ease-in-out;
+}
+
+#mid-bar::before {
+    transform: translateY(-0.5rem);
+}
+
+#mid-bar::after {
+    transform: translateY(0.5rem);
+}
+
+.hb-menu-btn.open {
+    #mid-bar {
+        background: transparent;
+    }
+    #mid-bar::before {
+        transform: rotate(45deg);
+    }
+    #mid-bar::after {
+        transform: rotate(-45deg);
+    }
+}
