@@ -1,12 +1,21 @@
 .navbar-main {
-    background: black;
-    padding: 1.5rem 1.25rem;
+    background: linear-gradient(to right, $very-light-red, $light-red);
+    padding: 1.5em 1.25em;
+    justify-content: space-between;
+    position: relative;
 }
 
-.title {
-    font-size: 1.25rem;
+@media screen and (min-width: 1440px) {
+    .navbar-main {
+        padding: 3rem 10rem;
+        justify-content: start;
+    }
+}
+
+.logo {
+    font-size: 2rem;
     color: white;
-    font-family: 'Overpass';
+    font-family: 'Overpass', sans-serif;
     font-weight: 600;
 }
 
@@ -53,4 +62,80 @@
     #mid-bar::after {
         transform: rotate(-45deg);
     }
+}
+
+.nav-menu {
+    position: absolute;
+    top: 8rem;
+    background: black;
+    width: 90%;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    background: white;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+}
+
+.top-level-menu {
+    display: flex;
+    flex-direction: column;
+    li, button {
+        color: $very-dark-blue;
+        list-style-type: none;
+        text-align: center;
+        font-size: 1.3rem;
+        font-family: 'Overpass', sans-serif;
+        padding: 0.2rem;
+        margin: 1rem;
+        font-weight: 600;
+    }      
+    ul {
+        background-color: #ebebeb;
+        border-radius: 0.3rem;
+        a {
+            color: $very-dark-grayish-blue;
+            font-size: 1rem;
+        }
+    }  
+}
+
+.menu-hr {
+    height: 1px;
+    background-color: #ebebeb;
+    border: none;
+}
+
+.login-btn, .signup-btn {
+    display: block;
+    border: none;
+    margin: 0 !important;
+    padding: 1rem 3rem !important;
+}
+
+.login-btn {
+    background: transparent;
+    a {
+        color: $very-dark-blue;
+    }
+}
+
+.signup-btn {
+    border-radius: 2rem;
+    align-self: center;
+    background: linear-gradient(to right, $very-light-red, $light-red);
+    a {
+        color: white;
+    }
+}
+
+input[type=checkbox] {
+    display: none;
+} 
+
+
+.top-level-menu ul {
+    display: none;
+}
+
+input:checked + ul {
+    display: block;
 }

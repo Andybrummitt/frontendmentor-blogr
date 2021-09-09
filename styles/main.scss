@@ -4,6 +4,14 @@
     box-sizing: border-box;
 }
 
+a {
+    text-decoration: none;
+}
+
+button {
+    cursor: pointer;
+}
+
 @import 'variables';
 @import 'header';
 
@@ -27,3 +35,6 @@
     align-items: center;
 }
 
+.hide {
+    display: none;
+}
