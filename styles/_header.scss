@@ -1,5 +1,4 @@
 .navbar-main {
-    background: linear-gradient(to right, $very-light-red, $light-red);
     padding: 1.5em 1.25em;
     justify-content: space-between;
     position: relative;
@@ -8,7 +7,7 @@
 @media screen and (min-width: 1440px) {
     .navbar-main {
         padding: 3rem 10rem;
-        justify-content: start;
+        justify-content: space-between;
     }
 }
 
@@ -66,7 +65,7 @@
 
 .nav-menu {
     position: absolute;
-    top: 8rem;
+    top: 5rem;
     background: black;
     width: 90%;
     border-radius: 0.5rem;
@@ -79,13 +78,14 @@
     display: flex;
     flex-direction: column;
     li, button {
+        cursor: pointer;
         color: $very-dark-blue;
         list-style-type: none;
         text-align: center;
         font-size: 1.3rem;
         font-family: 'Overpass', sans-serif;
         padding: 0.2rem;
-        margin: 1rem;
+        margin: 0.5rem;
         font-weight: 600;
     }      
     ul {
@@ -98,10 +98,72 @@
     }  
 }
 
+.menu-btns {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
 .menu-hr {
     height: 1px;
     background-color: #ebebeb;
     border: none;
+}
+
+@media screen and (min-width: 1440px) {
+    .hb-menu-btn {
+        display: none !important;
+    }
+
+    .nav-menu {
+        display: block !important;
+        position: static;
+        border-radius: 0.5rem;
+        padding: 1rem;
+        background: transparent;
+        box-shadow: none;
+    }
+
+    .top-level-menu {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        li, button {
+            color: white;
+            text-align: center;
+            font-size: 1.3rem;
+            font-family: 'Overpass', sans-serif;
+            padding: 0.2rem;
+            font-weight: 600;
+            position: relative;
+        }      
+        ul {
+            background-color: white;
+            border-radius: 0.3rem;
+            a {
+                color: $very-dark-grayish-blue;
+                font-size: 1rem;
+                font-weight: 300;
+            }
+            a:hover {
+                color: black;
+                font-weight: bold;
+            }
+        }  
+    }
+
+    .menu-btns {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .menu-hr {
+        display: none;
+    }
 }
 
 .login-btn, .signup-btn {
@@ -131,11 +193,83 @@ input[type=checkbox] {
     display: none;
 } 
 
-
 .top-level-menu ul {
     display: none;
 }
 
-input:checked + ul {
+input:checked ~ ul {
     display: block;
+}
+
+
+input:checked ~ .icon-arrow-dark {
+    transform: rotate(180deg);
+}
+
+@media screen and (min-width: 1440px) {
+    input:checked ~ ul {
+        display: none;
+    }
+
+    .top-level-menu li:hover {
+        ul {
+            display: block;
+            position: absolute;
+            width: 100%;
+        }
+    }
+
+    .icon-arrow-dark {
+        display: none;
+    }
+}
+
+header {
+    height: 510px;
+    background: linear-gradient(to right, $very-light-red, $light-red);
+    border-bottom-left-radius: 100px;
+}
+
+.tagline-and-cta-btns {
+    width: 75%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5rem;
+    text-align: center;
+    color: white;
+    h1 {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+    }
+}
+
+.cta-btns {
+    border: none;
+    padding: 0.6rem;
+    width: 8rem;
+    border-radius: 2rem;
+    margin: 3rem 0.25rem;
+    font-weight: bold;
+    transition: 0.3s ease-in-out;
+}
+
+#start-btn {
+    color: $light-red;
+    background: white;
+}
+
+#learn-btn {
+    color: white;
+    background: transparent;
+    border: 1px solid white;
+}
+
+#learn-btn:hover {
+    background: white;
+    color: $light-red;
+}
+
+#start-btn:hover {
+    background: $very-light-red;
+    color: white;
 }

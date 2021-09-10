@@ -5,6 +5,7 @@
   padding: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  font-family: 'Overpass', sans-serif;
 }
 
 a {
@@ -16,8 +17,6 @@ button {
 }
 
 .navbar-main {
-  background: -webkit-gradient(linear, left top, right top, from(#ff8f70), to(#ff3d54));
-  background: linear-gradient(to right, #ff8f70, #ff3d54);
   padding: 1.5em 1.25em;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
@@ -28,9 +27,9 @@ button {
 @media screen and (min-width: 1440px) {
   .navbar-main {
     padding: 3rem 10rem;
-    -webkit-box-pack: start;
-        -ms-flex-pack: start;
-            justify-content: start;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
   }
 }
 
@@ -95,7 +94,7 @@ button {
 
 .nav-menu {
   position: absolute;
-  top: 8rem;
+  top: 5rem;
   background: black;
   width: 90%;
   border-radius: 0.5rem;
@@ -116,13 +115,14 @@ button {
 }
 
 .top-level-menu li, .top-level-menu button {
+  cursor: pointer;
   color: #1f3f5b;
   list-style-type: none;
   text-align: center;
   font-size: 1.3rem;
   font-family: 'Overpass', sans-serif;
   padding: 0.2rem;
-  margin: 1rem;
+  margin: 0.5rem;
   font-weight: 600;
 }
 
@@ -136,10 +136,96 @@ button {
   font-size: 1rem;
 }
 
+.menu-btns {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
 .menu-hr {
   height: 1px;
   background-color: #ebebeb;
   border: none;
+}
+
+@media screen and (min-width: 1440px) {
+  .hb-menu-btn {
+    display: none !important;
+  }
+  .nav-menu {
+    display: block !important;
+    position: static;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    background: transparent;
+    -webkit-box-shadow: none;
+            box-shadow: none;
+  }
+  .top-level-menu {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .top-level-menu li, .top-level-menu button {
+    color: white;
+    text-align: center;
+    font-size: 1.3rem;
+    font-family: 'Overpass', sans-serif;
+    padding: 0.2rem;
+    font-weight: 600;
+    position: relative;
+  }
+  .top-level-menu ul {
+    background-color: white;
+    border-radius: 0.3rem;
+  }
+  .top-level-menu ul a {
+    color: #4b5862;
+    font-size: 1rem;
+    font-weight: 300;
+  }
+  .top-level-menu ul a:hover {
+    color: black;
+    font-weight: bold;
+  }
+  .menu-btns {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .menu-hr {
+    display: none;
+  }
 }
 
 .login-btn, .signup-btn {
@@ -178,8 +264,80 @@ input[type=checkbox] {
   display: none;
 }
 
-input:checked + ul {
+input:checked ~ ul {
   display: block;
+}
+
+input:checked ~ .icon-arrow-dark {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+@media screen and (min-width: 1440px) {
+  input:checked ~ ul {
+    display: none;
+  }
+  .top-level-menu li:hover ul {
+    display: block;
+    position: absolute;
+    width: 100%;
+  }
+  .icon-arrow-dark {
+    display: none;
+  }
+}
+
+header {
+  height: 510px;
+  background: -webkit-gradient(linear, left top, right top, from(#ff8f70), to(#ff3d54));
+  background: linear-gradient(to right, #ff8f70, #ff3d54);
+  border-bottom-left-radius: 100px;
+}
+
+.tagline-and-cta-btns {
+  width: 75%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5rem;
+  text-align: center;
+  color: white;
+}
+
+.tagline-and-cta-btns h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.cta-btns {
+  border: none;
+  padding: 0.6rem;
+  width: 8rem;
+  border-radius: 2rem;
+  margin: 3rem 0.25rem;
+  font-weight: bold;
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+}
+
+#start-btn {
+  color: #ff3d54;
+  background: white;
+}
+
+#learn-btn {
+  color: white;
+  background: transparent;
+  border: 1px solid white;
+}
+
+#learn-btn:hover {
+  background: white;
+  color: #ff3d54;
+}
+
+#start-btn:hover {
+  background: #ff8f70;
+  color: white;
 }
 
 .flex {
