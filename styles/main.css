@@ -16,6 +16,36 @@ button {
   cursor: pointer;
 }
 
+#bg-image {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  background-image: url(../images/bg-pattern-intro.svg);
+  background-size: 1200px;
+  background-repeat: no-repeat;
+  background-position: 38% 40%;
+}
+
+header {
+  min-height: 510px;
+  border-bottom-left-radius: 100px;
+  position: relative;
+  overflow: hidden;
+  background: -webkit-gradient(linear, right bottom, left top, from(#ff3d54), to(#ff8f70));
+  background: linear-gradient(to top left, #ff3d54, #ff8f70);
+}
+
+@media screen and (min-width: 1440px) {
+  #bg-image {
+    background-size: 2800px;
+    background-position: 20% 50%;
+  }
+  header {
+    background: -webkit-gradient(linear, left top, right top, from(#ff8f70), to(#ff3d54));
+    background: linear-gradient(to right, #ff8f70, #ff3d54);
+  }
+}
+
 .navbar-main {
   padding: 1.5em 1.25em;
   -webkit-box-pack: justify;
@@ -94,6 +124,7 @@ button {
 
 .nav-menu {
   position: absolute;
+  z-index: 1;
   top: 5rem;
   background: black;
   width: 90%;
@@ -112,6 +143,7 @@ button {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  font-family: 'Overpass', sans-serif;
 }
 
 .top-level-menu li, .top-level-menu button {
@@ -120,7 +152,6 @@ button {
   list-style-type: none;
   text-align: center;
   font-size: 1.3rem;
-  font-family: 'Overpass', sans-serif;
   padding: 0.2rem;
   margin: 0.5rem;
   font-weight: 600;
@@ -179,34 +210,40 @@ button {
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
             flex-direction: row;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
+    height: 100%;
   }
   .top-level-menu li, .top-level-menu button {
     color: white;
     text-align: center;
-    font-size: 1.3rem;
-    font-family: 'Overpass', sans-serif;
     padding: 0.2rem;
-    font-weight: 600;
     position: relative;
+    font-size: 1rem;
+  }
+  .top-level-menu li {
+    height: 100%;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 300;
+    padding: 1.5rem;
   }
   .top-level-menu ul {
     background-color: white;
-    border-radius: 0.3rem;
+    border-radius: 0.2rem;
   }
   .top-level-menu ul a {
+    font-family: 'Ubuntu', sans-serif;
     color: #4b5862;
-    font-size: 1rem;
+    font-size: 0.8rem;
     font-weight: 300;
   }
   .top-level-menu ul a:hover {
     color: black;
     font-weight: bold;
+  }
+  .top-level-menu ul li {
+    padding: 0;
   }
   .menu-btns {
     display: -webkit-box;
@@ -222,6 +259,7 @@ button {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
+    margin-left: auto;
   }
   .menu-hr {
     display: none;
@@ -256,6 +294,21 @@ button {
   color: white;
 }
 
+@media screen and (min-width: 1440px) {
+  .signup-btn {
+    background: white;
+  }
+  .signup-btn a {
+    color: #ff525d;
+  }
+  .signup-btn:hover {
+    background: #ff7a85;
+  }
+  .signup-btn:hover a {
+    color: white;
+  }
+}
+
 input[type=checkbox] {
   display: none;
 }
@@ -277,21 +330,28 @@ input:checked ~ .icon-arrow-dark {
   input:checked ~ ul {
     display: none;
   }
+  .top-level-menu li:hover {
+    text-decoration: underline;
+  }
   .top-level-menu li:hover ul {
     display: block;
     position: absolute;
-    width: 100%;
+    top: 3.5rem;
+    left: 0;
+    width: 130%;
+    -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+  }
+  .top-level-menu li:hover ul li {
+    text-align: start;
+    text-decoration: none;
+  }
+  .login-btn a {
+    color: white;
   }
   .icon-arrow-dark {
     display: none;
   }
-}
-
-header {
-  height: 510px;
-  background: -webkit-gradient(linear, left top, right top, from(#ff8f70), to(#ff3d54));
-  background: linear-gradient(to right, #ff8f70, #ff3d54);
-  border-bottom-left-radius: 100px;
 }
 
 .tagline-and-cta-btns {
@@ -299,6 +359,7 @@ header {
   margin-left: auto;
   margin-right: auto;
   margin-top: 5rem;
+  position: relative;
   text-align: center;
   color: white;
 }
@@ -336,8 +397,131 @@ header {
 }
 
 #start-btn:hover {
-  background: #ff8f70;
+  background: #ff7a85;
   color: white;
+}
+
+.section1, .section3 {
+  margin: 5rem 0 3rem 0;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: center;
+  position: relative;
+}
+
+.section1 h2, .section3 h2 {
+  color: #1f3f5b;
+  font-weight: 600;
+  font-size: 1.6rem;
+  line-height: 2rem;
+}
+
+.section1 img, .section3 img {
+  margin: 2.5rem 0;
+}
+
+.section1 article, .section3 article {
+  padding: 1.2rem;
+  line-height: 1.5rem;
+}
+
+.section1 article h2, .section3 article h2 {
+  margin: 1.5rem 0;
+}
+
+.section1 article p, .section3 article p {
+  font-size: 0.9rem;
+  color: #4b5862;
+}
+
+#illustration-editor-desktop-svg {
+  display: none;
+}
+
+@media screen and (min-width: 1440px) {
+  #illustration-editor-desktop-svg {
+    display: inline-block;
+    width: 925px;
+    height: 882px;
+    position: absolute;
+    right: -230px;
+    top: 0;
+  }
+  #illustration-editor-mobile-svg {
+    display: none;
+  }
+  .section1 .section-title {
+    font-size: 2.5rem;
+    margin-top: 5rem;
+  }
+  .section1 article {
+    text-align: left;
+  }
+  .section1 .text-container {
+    margin-top: 5rem;
+    max-width: 35%;
+    margin-left: 8rem;
+  }
+}
+
+.section2 {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: relative;
+  margin-top: 9rem;
+  color: white;
+}
+
+#phones-svg {
+  width: 90%;
+  height: 300px;
+  position: absolute;
+  top: -120px;
+}
+
+.section2-bg {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  min-height: 550px;
+  width: 100%;
+  background: #2c2d3f;
+  border-top-right-radius: 5rem;
+  border-bottom-left-radius: 5rem;
+  background-image: url(../images/bg-pattern-circles.svg);
+  background-size: 500px;
+  background-repeat: no-repeat;
+  background-position: 55% -400%;
+}
+
+.section2-bg .container {
+  margin-top: 4rem;
+  text-align: center;
+  width: 85%;
+}
+
+.section2-bg .container h2 {
+  margin: 1.5rem 0;
+  font-size: 2rem;
+}
+
+.section2-bg .container p {
+  font-size: 0.9rem;
+  line-height: 1.5rem;
 }
 
 .flex {

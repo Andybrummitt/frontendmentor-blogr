@@ -1,0 +1,106 @@
+.section1, .section3 {
+    margin: 5rem 0 3rem 0;
+    flex-direction: column;
+    text-align: center;
+    position: relative;
+    h2 {
+        color: $very-dark-blue;
+        font-weight: 600;
+        font-size: 1.6rem;
+        line-height: 2rem;
+    }
+    img {
+        margin: 2.5rem 0;
+    }
+    article {
+        padding: 1.2rem;
+        line-height: 1.5rem;
+        h2 {
+            margin: 1.5rem 0;
+        }
+        p {
+            font-size: 0.9rem;
+            color: $very-dark-grayish-blue;
+        }
+    }
+}
+
+#illustration-editor-desktop-svg {
+    display: none;
+}
+
+@media screen and (min-width: 1440px) {
+    #illustration-editor-desktop-svg {
+        display: inline-block;
+        width: 925px; 
+        height: 882px;
+        position: absolute;
+        right: -230px;
+        top: 0;
+    }
+
+    #illustration-editor-mobile-svg {
+        display: none;
+    }
+
+    .section1 {
+        .section-title {
+            font-size: 2.5rem;
+            margin-top: 5rem;
+        }
+
+        article {
+                text-align: left;
+        }
+        .text-container {
+            margin-top: 5rem;
+            max-width: 35%;
+            margin-left: 8rem;
+        }
+    }
+}
+
+// -------------    SECTION 2   ----------------
+
+.section2 {
+    flex-direction: column;
+    position: relative;
+    margin-top: 9rem;
+    color: white;
+}
+
+#phones-svg {
+    width: 90%;
+    height: 300px;
+    position: absolute;
+    top: -120px;
+}
+
+.section2-bg {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 550px;
+    width: 100%;
+    background: $very-dark-gray-blue;
+    border-top-right-radius: 5rem;
+    border-bottom-left-radius: 5rem;
+    background-image: url(../images/bg-pattern-circles.svg);
+    background-size: 500px;
+    background-repeat: no-repeat;
+    background-position: 55% -400%;
+    .container {
+        margin-top: 4rem;
+        text-align: center;
+        width: 85%;
+        h2 {
+            margin: 1.5rem 0;
+            font-size: 2rem;
+        }
+        p {
+            font-size: 0.9rem;
+            line-height: 1.5rem;
+        }
+    }
+}

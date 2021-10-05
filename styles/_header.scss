@@ -1,3 +1,32 @@
+#bg-image {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    background-image: url(../images/bg-pattern-intro.svg);
+    background-size: 1200px;
+    background-repeat: no-repeat;
+    background-position: 38% 40%;
+}
+
+header {
+    min-height: 510px;
+    border-bottom-left-radius: 100px;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(to top left, $bg-light-red, $bg-very-light-red);
+}
+
+@media screen and (min-width: 1440px) {
+    #bg-image {
+        background-size: 2800px;
+        background-position: 20% 50%;
+    }
+
+    header {
+        background: linear-gradient(to right, $bg-very-light-red, $bg-light-red);
+    }
+}
+
 .navbar-main {
     padding: 1.5em 1.25em;
     justify-content: space-between;
@@ -65,6 +94,7 @@
 
 .nav-menu {
     position: absolute;
+    z-index: 1;
     top: 5rem;
     background: black;
     width: 90%;
@@ -77,13 +107,13 @@
 .top-level-menu {
     display: flex;
     flex-direction: column;
+    font-family: 'Overpass', sans-serif;
     li, button {
         cursor: pointer;
         color: $very-dark-blue;
         list-style-type: none;
         text-align: center;
         font-size: 1.3rem;
-        font-family: 'Overpass', sans-serif;
         padding: 0.2rem;
         margin: 0.5rem;
         font-weight: 600;
@@ -128,28 +158,36 @@
     .top-level-menu {
         display: flex;
         flex-direction: row;
-        justify-content: space-between;
         align-items: center;
+        height: 100%;
         li, button {
             color: white;
             text-align: center;
-            font-size: 1.3rem;
-            font-family: 'Overpass', sans-serif;
             padding: 0.2rem;
-            font-weight: 600;
             position: relative;
+            font-size: 1rem;
         }      
+        li {
+            height: 100%;
+            font-family: 'Ubuntu', sans-serif;
+            font-weight: 300;
+            padding: 1.5rem;
+        }
         ul {
             background-color: white;
-            border-radius: 0.3rem;
+            border-radius: 0.2rem;
             a {
+                font-family: 'Ubuntu', sans-serif;
                 color: $very-dark-grayish-blue;
-                font-size: 1rem;
+                font-size: 0.8rem;
                 font-weight: 300;
             }
             a:hover {
                 color: black;
                 font-weight: bold;
+            }
+            li {
+                padding: 0;
             }
         }  
     }
@@ -159,6 +197,7 @@
         flex-direction: row;
         align-items: center;
         justify-content: center;
+        margin-left: auto;
     }
 
     .menu-hr {
@@ -189,6 +228,22 @@
     }
 }
 
+@media screen and (min-width: 1440px) {
+    .signup-btn {
+        background: white;
+        a {
+            color: $light-red-cta-text;
+        }
+    }
+    .signup-btn:hover {
+        background: $very-light-red-cta-hover-bg;
+        a{
+            color: white;
+        }   
+    }
+}
+
+
 input[type=checkbox] {
     display: none;
 } 
@@ -212,29 +267,41 @@ input:checked ~ .icon-arrow-dark {
     }
 
     .top-level-menu li:hover {
+        text-decoration: underline;
         ul {
             display: block;
             position: absolute;
-            width: 100%;
+            top: 3.5rem;
+            left: 0;
+            width: 130%;
+            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+            li {
+                text-align: start;
+                text-decoration: none;
+            }
         }
+    }
+
+    .login-btn a {
+            color: white;
     }
 
     .icon-arrow-dark {
         display: none;
     }
+
 }
 
-header {
-    height: 510px;
-    background: linear-gradient(to right, $very-light-red, $light-red);
-    border-bottom-left-radius: 100px;
-}
+// 
+
+
 
 .tagline-and-cta-btns {
     width: 75%;
     margin-left: auto;
     margin-right: auto;
     margin-top: 5rem;
+    position: relative;
     text-align: center;
     color: white;
     h1 {
@@ -270,6 +337,6 @@ header {
 }
 
 #start-btn:hover {
-    background: $very-light-red;
+    background: $very-light-red-cta-hover-bg;
     color: white;
 }
