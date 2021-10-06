@@ -524,6 +524,69 @@ input:checked ~ .icon-arrow-dark {
   line-height: 1.5rem;
 }
 
+@media screen and (min-width: 1440px) {
+  #phones-svg {
+    width: auto;
+    height: auto;
+    position: absolute;
+    top: -60px;
+    left: 10%;
+  }
+  .section2 {
+    margin-top: 22rem;
+  }
+  .section2 .container {
+    margin-top: auto;
+    margin-bottom: auto;
+    width: 30%;
+    margin-left: auto;
+    margin-right: 18%;
+  }
+  .section2 .container h2, .section2 .container p {
+    text-align: left;
+  }
+  .section2-bg {
+    min-height: 400px;
+    background-size: 1100px;
+    background-position: -55% 85%;
+  }
+}
+
+.section3 {
+  margin: 0;
+}
+
+.section3 h2 {
+  margin-bottom: 1.5rem;
+}
+
+@media screen and (min-width: 1440px) {
+  .section3 {
+    margin: 4rem 0;
+    height: 900px;
+  }
+  .section3 .container {
+    margin-top: auto;
+    margin-bottom: auto;
+    width: 30%;
+    margin-left: auto;
+    margin-right: 18%;
+  }
+  .section3 .container h2, .section3 .container p {
+    text-align: left;
+  }
+  #illustration-laptop-desktop {
+    display: block;
+    width: 65%;
+    height: auto;
+    position: absolute;
+    left: -18%;
+  }
+  #illustration-laptop-mobile {
+    display: none;
+  }
+}
+
 .flex {
   display: -webkit-box;
   display: -ms-flexbox;
