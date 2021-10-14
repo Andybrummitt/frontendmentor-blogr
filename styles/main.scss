@@ -13,9 +13,16 @@ button {
     cursor: pointer;
 }
 
+@mixin desktop {
+    @media screen and (min-width: 1440px){
+        @content;
+    }
+}
+
 @import 'variables';
 @import 'header';
 @import 'sections';
+@import 'footer';
 
 .flex {
     display: flex;
@@ -40,3 +47,4 @@ button {
 .hide {
     display: none;
 }
+

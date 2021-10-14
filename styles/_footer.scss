@@ -1,0 +1,35 @@
+#footer {
+    margin-top: 7rem;
+    flex-direction: column;
+    color: white;
+    background: $very-dark-black-blue;
+    align-items: center;
+    border-top-right-radius: 5rem;
+    text-align: center;
+    p {
+        font-family: 'Ubuntu', sans-serif;
+        font-weight: 400;
+    }
+    ul {
+        text-align: center;
+        list-style-type: none;
+        line-height: 1.75rem;
+        margin-bottom: 2.5rem;
+    a {
+        text-decoration: none;
+        color: $grayish-blue;
+        font-family: 'Ubuntu', sans-serif;
+        font-weight: 300;
+    }
+    }
+    .sub-heading {
+        margin-bottom: 2rem;
+    }
+    #logo {
+        margin: 4rem 0;
+        width: 6rem;
+        @include desktop {
+            width: 6.5rem;
+        }
+    }
+}

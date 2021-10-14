@@ -25,30 +25,13 @@
     }
 }
 
-#illustration-editor-desktop-svg {
-    display: none;
-}
-
-@media screen and (min-width: 1440px) {
-    #illustration-editor-desktop-svg {
-        display: inline-block;
-        width: 925px; 
-        height: 882px;
-        position: absolute;
-        right: -230px;
-        top: 0;
-    }
-
-    #illustration-editor-mobile-svg {
-        display: none;
-    }
-
-    .section1 {
+.section1 {
+    @include desktop {
         .section-title {
             font-size: 2.5rem;
             margin-top: 5rem;
         }
-
+    
         article {
                 text-align: left;
         }
@@ -57,6 +40,24 @@
             max-width: 35%;
             margin-left: 8rem;
         }
+    }
+}
+
+#illustration-editor-desktop-svg {
+    display: none;
+    @include desktop {
+        display: inline-block;
+        width: 925px; 
+        height: 882px;
+        position: absolute;
+        right: -230px;
+        top: 0;
+    }
+}
+
+#illustration-editor-mobile-svg {
+    @include desktop {
+        display: none;
     }
 }
 
@@ -74,6 +75,12 @@
     height: 300px;
     position: absolute;
     top: -120px;
+    @include desktop {
+        width: auto;
+        height: auto;
+        top: -60px;
+        left: 10%;
+    }
 }
 
 .section2-bg {
@@ -90,6 +97,11 @@
     background-size: 500px;
     background-repeat: no-repeat;
     background-position: 55% -400%;
+    @include desktop {
+        min-height: 400px;
+        background-size: 1100px;
+        background-position: -55% 85%;
+        }
     .container {
         margin-top: 4rem;
         text-align: center;
@@ -105,15 +117,7 @@
     }
 }
 
-@media screen and (min-width: 1440px) {
-    #phones-svg {
-        width: auto;
-        height: auto;
-        position: absolute;
-        top: -60px;
-        left: 10%;
-    }
-
+@include desktop {
     .section2 {
         margin-top: 22rem;
         .container {
@@ -126,13 +130,7 @@
                 text-align: left;
             }
         }
-    }
-
-    .section2-bg {
-        min-height: 400px;
-        background-size: 1100px;
-        background-position: -55% 85%;
-    }
+    }   
 }
 
 //  --------------  SECTION 3   -------------------
@@ -144,8 +142,7 @@
     }
 }
 
-@media screen and (min-width: 1440px) {
-
+@include desktop {
     .section3 {
         margin: 4rem 0;
         height: 900px;
@@ -159,18 +156,16 @@
                 text-align: left;
             }
         }
-    }
+    }  
+}
 
+@include desktop {
     #illustration-laptop-desktop {
         display: block;
-        width: 65%;
-        height: auto;
         position: absolute;
-        left: -18%;
+        left: -250px;
     }
-
     #illustration-laptop-mobile {
         display: none;
     }
-
 }

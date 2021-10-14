@@ -26,6 +26,13 @@ button {
   background-position: 38% 40%;
 }
 
+@media screen and (min-width: 1440px) {
+  #bg-image {
+    background-size: 2800px;
+    background-position: 20% 50%;
+  }
+}
+
 header {
   min-height: 510px;
   border-bottom-left-radius: 100px;
@@ -36,10 +43,6 @@ header {
 }
 
 @media screen and (min-width: 1440px) {
-  #bg-image {
-    background-size: 2800px;
-    background-position: 20% 50%;
-  }
   header {
     background: -webkit-gradient(linear, left top, right top, from(#ff8f70), to(#ff3d54));
     background: linear-gradient(to right, #ff8f70, #ff3d54);
@@ -63,11 +66,15 @@ header {
   }
 }
 
-.logo {
-  font-size: 2rem;
-  color: white;
-  font-family: 'Overpass', sans-serif;
-  font-weight: 600;
+#logo {
+  width: 20%;
+  height: auto;
+}
+
+@media screen and (min-width: 1440px) {
+  #logo {
+    width: 6.25rem;
+  }
 }
 
 .hb-menu-btn {
@@ -77,6 +84,12 @@ header {
   position: relative;
   -webkit-transition: 0.3s ease-in-out;
   transition: 0.3s ease-in-out;
+}
+
+@media screen and (min-width: 1440px) {
+  .hb-menu-btn {
+    display: none !important;
+  }
 }
 
 #mid-bar {
@@ -135,6 +148,18 @@ header {
           box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
 }
 
+@media screen and (min-width: 1440px) {
+  .nav-menu {
+    display: block !important;
+    position: static;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    background: transparent;
+    -webkit-box-shadow: none;
+            box-shadow: none;
+  }
+}
+
 .top-level-menu {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -144,6 +169,22 @@ header {
       -ms-flex-direction: column;
           flex-direction: column;
   font-family: 'Overpass', sans-serif;
+}
+
+@media screen and (min-width: 1440px) {
+  .top-level-menu {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    height: 100%;
+  }
 }
 
 .top-level-menu li, .top-level-menu button {
@@ -157,14 +198,62 @@ header {
   font-weight: 600;
 }
 
+@media screen and (min-width: 1440px) {
+  .top-level-menu li, .top-level-menu button {
+    color: white;
+    text-align: center;
+    padding: 0.2rem;
+    position: relative;
+    font-size: 1rem;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .top-level-menu li {
+    height: 100%;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 300;
+    padding: 1.5rem;
+  }
+}
+
 .top-level-menu ul {
   background-color: #ebebeb;
   border-radius: 0.3rem;
 }
 
+@media screen and (min-width: 1440px) {
+  .top-level-menu ul {
+    background-color: white;
+    border-radius: 0.2rem;
+  }
+}
+
 .top-level-menu ul a {
   color: #4b5862;
   font-size: 1rem;
+}
+
+@media screen and (min-width: 1440px) {
+  .top-level-menu ul a {
+    font-family: 'Ubuntu', sans-serif;
+    color: #4b5862;
+    font-size: 0.8rem;
+    font-weight: 300;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .top-level-menu ul a:hover {
+    color: black;
+    font-weight: bold;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .top-level-menu ul li {
+    padding: 0;
+  }
 }
 
 .menu-btns {
@@ -183,6 +272,16 @@ header {
           justify-content: center;
 }
 
+@media screen and (min-width: 1440px) {
+  .menu-btns {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    margin-left: auto;
+  }
+}
+
 .menu-hr {
   height: 1px;
   background-color: #ebebeb;
@@ -190,77 +289,6 @@ header {
 }
 
 @media screen and (min-width: 1440px) {
-  .hb-menu-btn {
-    display: none !important;
-  }
-  .nav-menu {
-    display: block !important;
-    position: static;
-    border-radius: 0.5rem;
-    padding: 1rem;
-    background: transparent;
-    -webkit-box-shadow: none;
-            box-shadow: none;
-  }
-  .top-level-menu {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    height: 100%;
-  }
-  .top-level-menu li, .top-level-menu button {
-    color: white;
-    text-align: center;
-    padding: 0.2rem;
-    position: relative;
-    font-size: 1rem;
-  }
-  .top-level-menu li {
-    height: 100%;
-    font-family: 'Ubuntu', sans-serif;
-    font-weight: 300;
-    padding: 1.5rem;
-  }
-  .top-level-menu ul {
-    background-color: white;
-    border-radius: 0.2rem;
-  }
-  .top-level-menu ul a {
-    font-family: 'Ubuntu', sans-serif;
-    color: #4b5862;
-    font-size: 0.8rem;
-    font-weight: 300;
-  }
-  .top-level-menu ul a:hover {
-    color: black;
-    font-weight: bold;
-  }
-  .top-level-menu ul li {
-    padding: 0;
-  }
-  .menu-btns {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    margin-left: auto;
-  }
   .menu-hr {
     display: none;
   }
@@ -290,17 +318,23 @@ header {
   background: linear-gradient(to right, #ff8f70, #ff3d54);
 }
 
+@media screen and (min-width: 1440px) {
+  .signup-btn {
+    background: white;
+  }
+}
+
 .signup-btn a {
   color: white;
 }
 
 @media screen and (min-width: 1440px) {
-  .signup-btn {
-    background: white;
-  }
   .signup-btn a {
     color: #ff525d;
   }
+}
+
+@media screen and (min-width: 1440px) {
   .signup-btn:hover {
     background: #ff7a85;
   }
@@ -321,15 +355,13 @@ input:checked ~ ul {
   display: block;
 }
 
-input:checked ~ .icon-arrow-dark {
-  -webkit-transform: rotate(180deg);
-          transform: rotate(180deg);
-}
-
 @media screen and (min-width: 1440px) {
   input:checked ~ ul {
     display: none;
   }
+}
+
+@media screen and (min-width: 1440px) {
   .top-level-menu li:hover {
     text-decoration: underline;
   }
@@ -346,12 +378,23 @@ input:checked ~ .icon-arrow-dark {
     text-align: start;
     text-decoration: none;
   }
+}
+
+@media screen and (min-width: 1440px) {
   .login-btn a {
     color: white;
   }
+}
+
+@media screen and (min-width: 1440px) {
   .icon-arrow-dark {
     display: none;
   }
+}
+
+input:checked ~ .icon-arrow-dark {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
 }
 
 .tagline-and-cta-btns {
@@ -436,6 +479,21 @@ input:checked ~ .icon-arrow-dark {
   color: #4b5862;
 }
 
+@media screen and (min-width: 1440px) {
+  .section1 .section-title {
+    font-size: 2.5rem;
+    margin-top: 5rem;
+  }
+  .section1 article {
+    text-align: left;
+  }
+  .section1 .text-container {
+    margin-top: 5rem;
+    max-width: 35%;
+    margin-left: 8rem;
+  }
+}
+
 #illustration-editor-desktop-svg {
   display: none;
 }
@@ -449,20 +507,11 @@ input:checked ~ .icon-arrow-dark {
     right: -230px;
     top: 0;
   }
+}
+
+@media screen and (min-width: 1440px) {
   #illustration-editor-mobile-svg {
     display: none;
-  }
-  .section1 .section-title {
-    font-size: 2.5rem;
-    margin-top: 5rem;
-  }
-  .section1 article {
-    text-align: left;
-  }
-  .section1 .text-container {
-    margin-top: 5rem;
-    max-width: 35%;
-    margin-left: 8rem;
   }
 }
 
@@ -481,6 +530,15 @@ input:checked ~ .icon-arrow-dark {
   height: 300px;
   position: absolute;
   top: -120px;
+}
+
+@media screen and (min-width: 1440px) {
+  #phones-svg {
+    width: auto;
+    height: auto;
+    top: -60px;
+    left: 10%;
+  }
 }
 
 .section2-bg {
@@ -508,6 +566,14 @@ input:checked ~ .icon-arrow-dark {
   background-position: 55% -400%;
 }
 
+@media screen and (min-width: 1440px) {
+  .section2-bg {
+    min-height: 400px;
+    background-size: 1100px;
+    background-position: -55% 85%;
+  }
+}
+
 .section2-bg .container {
   margin-top: 4rem;
   text-align: center;
@@ -525,13 +591,6 @@ input:checked ~ .icon-arrow-dark {
 }
 
 @media screen and (min-width: 1440px) {
-  #phones-svg {
-    width: auto;
-    height: auto;
-    position: absolute;
-    top: -60px;
-    left: 10%;
-  }
   .section2 {
     margin-top: 22rem;
   }
@@ -544,11 +603,6 @@ input:checked ~ .icon-arrow-dark {
   }
   .section2 .container h2, .section2 .container p {
     text-align: left;
-  }
-  .section2-bg {
-    min-height: 400px;
-    background-size: 1100px;
-    background-position: -55% 85%;
   }
 }
 
@@ -575,15 +629,65 @@ input:checked ~ .icon-arrow-dark {
   .section3 .container h2, .section3 .container p {
     text-align: left;
   }
+}
+
+@media screen and (min-width: 1440px) {
   #illustration-laptop-desktop {
     display: block;
-    width: 65%;
-    height: auto;
     position: absolute;
-    left: -18%;
+    left: -250px;
   }
   #illustration-laptop-mobile {
     display: none;
+  }
+}
+
+#footer {
+  margin-top: 7rem;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  color: white;
+  background: #25252d;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-top-right-radius: 5rem;
+  text-align: center;
+}
+
+#footer p {
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: 400;
+}
+
+#footer ul {
+  text-align: center;
+  list-style-type: none;
+  line-height: 1.75rem;
+  margin-bottom: 2.5rem;
+}
+
+#footer ul a {
+  text-decoration: none;
+  color: #c8c8cb;
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: 300;
+}
+
+#footer .sub-heading {
+  margin-bottom: 2rem;
+}
+
+#footer #logo {
+  margin: 4rem 0;
+  width: 6rem;
+}
+
+@media screen and (min-width: 1440px) {
+  #footer #logo {
+    width: 6.5rem;
   }
 }
 

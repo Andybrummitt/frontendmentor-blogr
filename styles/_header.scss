@@ -6,6 +6,10 @@
     background-size: 1200px;
     background-repeat: no-repeat;
     background-position: 38% 40%;
+    @include desktop {
+        background-size: 2800px;
+        background-position: 20% 50%;
+    }
 }
 
 header {
@@ -14,15 +18,7 @@ header {
     position: relative;
     overflow: hidden;
     background: linear-gradient(to top left, $bg-light-red, $bg-very-light-red);
-}
-
-@media screen and (min-width: 1440px) {
-    #bg-image {
-        background-size: 2800px;
-        background-position: 20% 50%;
-    }
-
-    header {
+    @include desktop {
         background: linear-gradient(to right, $bg-very-light-red, $bg-light-red);
     }
 }
@@ -31,20 +27,18 @@ header {
     padding: 1.5em 1.25em;
     justify-content: space-between;
     position: relative;
-}
-
-@media screen and (min-width: 1440px) {
-    .navbar-main {
+    @include desktop {
         padding: 3rem 10rem;
         justify-content: space-between;
     }
 }
 
-.logo {
-    font-size: 2rem;
-    color: white;
-    font-family: 'Overpass', sans-serif;
-    font-weight: 600;
+#logo {
+    width: 20%;
+    height: auto;
+    @include desktop {
+        width: 6.25rem;
+    }
 }
 
 .hb-menu-btn  {
@@ -53,6 +47,9 @@ header {
     cursor: pointer;
     position: relative;
     transition: 0.3s ease-in-out;
+    @include desktop {
+        display: none !important;
+    }
 }
 
 #mid-bar {
@@ -102,12 +99,26 @@ header {
     padding: 1rem;
     background: white;
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+    @include desktop {
+        display: block !important;
+        position: static;
+        border-radius: 0.5rem;
+        padding: 1rem;
+        background: transparent;
+        box-shadow: none;
+    }
 }
 
 .top-level-menu {
     display: flex;
     flex-direction: column;
     font-family: 'Overpass', sans-serif;
+    @include desktop {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            height: 100%;
+        }
     li, button {
         cursor: pointer;
         color: $very-dark-blue;
@@ -117,13 +128,49 @@ header {
         padding: 0.2rem;
         margin: 0.5rem;
         font-weight: 600;
+        @include desktop {
+            color: white;
+            text-align: center;
+            padding: 0.2rem;
+            position: relative;
+            font-size: 1rem;     
+            }
+        }
+        li {
+            @include desktop {
+                height: 100%;
+                font-family: 'Ubuntu', sans-serif;
+                font-weight: 300;
+                padding: 1.5rem;
+        }
     }      
     ul {
         background-color: #ebebeb;
         border-radius: 0.3rem;
+        @include desktop {
+            background-color: white;
+            border-radius: 0.2rem;
+        }
         a {
             color: $very-dark-grayish-blue;
             font-size: 1rem;
+            @include desktop {
+                font-family: 'Ubuntu', sans-serif;
+                color: $very-dark-grayish-blue;
+                font-size: 0.8rem;
+                font-weight: 300;
+            }
+        }
+        a:hover {
+            @include desktop {
+                color: black;
+                font-weight: bold;
+            }
+        }
+        li {
+            @include desktop {
+                padding: 0;
+            }
         }
     }  
 }
@@ -133,77 +180,21 @@ header {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    @include desktop {
+        flex-direction: row;
+        margin-left: auto;
+    }
 }
 
 .menu-hr {
     height: 1px;
     background-color: #ebebeb;
     border: none;
-}
-
-@media screen and (min-width: 1440px) {
-    .hb-menu-btn {
-        display: none !important;
-    }
-
-    .nav-menu {
-        display: block !important;
-        position: static;
-        border-radius: 0.5rem;
-        padding: 1rem;
-        background: transparent;
-        box-shadow: none;
-    }
-
-    .top-level-menu {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        height: 100%;
-        li, button {
-            color: white;
-            text-align: center;
-            padding: 0.2rem;
-            position: relative;
-            font-size: 1rem;
-        }      
-        li {
-            height: 100%;
-            font-family: 'Ubuntu', sans-serif;
-            font-weight: 300;
-            padding: 1.5rem;
-        }
-        ul {
-            background-color: white;
-            border-radius: 0.2rem;
-            a {
-                font-family: 'Ubuntu', sans-serif;
-                color: $very-dark-grayish-blue;
-                font-size: 0.8rem;
-                font-weight: 300;
-            }
-            a:hover {
-                color: black;
-                font-weight: bold;
-            }
-            li {
-                padding: 0;
-            }
-        }  
-    }
-
-    .menu-btns {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: center;
-        margin-left: auto;
-    }
-
-    .menu-hr {
+    @include desktop {
         display: none;
     }
 }
+
 
 .login-btn, .signup-btn {
     display: block;
@@ -223,26 +214,25 @@ header {
     border-radius: 2rem;
     align-self: center;
     background: linear-gradient(to right, $very-light-red, $light-red);
+    @include desktop {
+        background: white;
+    }
     a {
         color: white;
-    }
-}
-
-@media screen and (min-width: 1440px) {
-    .signup-btn {
-        background: white;
-        a {
+        @include desktop {
             color: $light-red-cta-text;
         }
     }
-    .signup-btn:hover {
+}
+
+.signup-btn:hover {
+    @include desktop {
         background: $very-light-red-cta-hover-bg;
         a{
             color: white;
         }   
-    }
+    } 
 }
-
 
 input[type=checkbox] {
     display: none;
@@ -254,19 +244,13 @@ input[type=checkbox] {
 
 input:checked ~ ul {
     display: block;
-}
-
-
-input:checked ~ .icon-arrow-dark {
-    transform: rotate(180deg);
-}
-
-@media screen and (min-width: 1440px) {
-    input:checked ~ ul {
+    @include desktop {
         display: none;
     }
+}
 
-    .top-level-menu li:hover {
+.top-level-menu li:hover {
+    @include desktop {
         text-decoration: underline;
         ul {
             display: block;
@@ -280,21 +264,26 @@ input:checked ~ .icon-arrow-dark {
                 text-decoration: none;
             }
         }
-    }
-
-    .login-btn a {
-            color: white;
-    }
-
-    .icon-arrow-dark {
-        display: none;
-    }
-
+    }  
 }
 
-// 
+.login-btn a {
+    @include desktop {
+        color: white;
+    }
+    
+}
+
+.icon-arrow-dark {
+    @include desktop {
+        display: none;
+    }
+}
 
 
+input:checked ~ .icon-arrow-dark {
+    transform: rotate(180deg);
+}
 
 .tagline-and-cta-btns {
     width: 75%;
