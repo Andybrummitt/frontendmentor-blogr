@@ -67,7 +67,7 @@
     flex-direction: column;
     position: relative;
     margin-top: 9rem;
-    color: white;
+    color: $grayish-blue;
 }
 
 #phones-svg {
@@ -109,6 +109,7 @@
         h2 {
             margin: 1.5rem 0;
             font-size: 2rem;
+            color: white;
         }
         p {
             font-size: 0.9rem;

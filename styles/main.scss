@@ -5,11 +5,18 @@
     font-family: 'Overpass', sans-serif;
 }
 
+html,body
+{
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden; 
+}
+
 a {
     text-decoration: none;
 }
 
-button {
+button, #logo {
     cursor: pointer;
 }
 
